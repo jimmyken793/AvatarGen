@@ -11,11 +11,11 @@
 	<link rel="shortcut icon" href="favicon.ico"/>
     <link rel="image_src" href="http://jimmyken793.github.com/AvatarGen/images/chicken.jpg" /> 
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Schoolbell:regular"/>
+    <link rel="stylesheet" type="text/css" href="css/ui-darkness/jquery-ui-1.8.10.custom.css"/>
+    <link rel="stylesheet" type="text/css" href="css/colorpicker.css"/>
 
 	<link rel="stylesheet" type="text/css" href="css/main.css"/>
     <link rel="stylesheet" type="text/css" href="css/layout.css"/>
-	<link rel="stylesheet" type="text/css" href="css/ui-darkness/jquery-ui-1.8.10.custom.css"/>
-    <link rel="stylesheet" type="text/css" href="css/colorpicker.css"/>
 	
 	<script type="text/javascript" src="js/jquery/jquery-1.4.4.min.js"></script>
 	<script type="text/javascript" src="js/jquery/jquery-ui-1.8.10.custom.min.js"></script>
@@ -101,6 +101,7 @@
     </script>
 </head>
 <body>
+
     <div id="wrapper">
         <aside id="message"></aside>
 
@@ -109,43 +110,41 @@
             <img src="images/ajax-loader.gif" />
         </div>
         <div><a href="https://www.facebook.com/csiezhou2012">2012資訊週官方粉絲頁</a>&nbsp;<a href="http://www.ntumobile.org/">NTU Mobile Lab 430 熱烈招生中</a></div>
+    <div id="footer">Original Author <a href="https://github.com/theburningmonk/">theburningmonk</a>, Modified By <a href="http://www.facebook.com/jimmyken793">jimmyken793</a></div>
         <div id="accordion">
             <h2 id="step-1"><a href="#">Step 1 - Create</a></h2>
             <div>
-                <div id="canvas-panel" class="block">
-                    <canvas id="drawingCanvas" width="500" height="500"></canvas>
-			        <canvas id="overlay" width="500" height="500"
-                            onSelectStart="setCursor(this); return false;"></canvas>
+                <div id="left-panel">
+                    <div id="canvas-panel" class="block">
+                        <canvas id="drawingCanvas" width="500" height="500"></canvas>
+                        <canvas id="overlay" width="500" height="500"
+                                onSelectStart="setCursor(this); return false;"></canvas>
+                    </div>
                 </div>
-
-                <div id="tools-panel" class="block">
-                    <ul>
-                        <li class="tool-panel-button tool-button">
-                            <div id="stroke-colour-tool" class="block, fill">
-                                <p>Colour</p>
-                                <span id="stroke-colour"></span>
-                                <div id="stroke-colour-picker"></div>
-                            </div>                            
-                        </li>
-                        <li class="tool-panel-button tool-button selected">
-                            <img id="pencil-tool" src="images/tools_panel_pencil_button.png" class="block, fill" />
-                        </li>
-                        <li class="tool-panel-button tool-button">
-                            <img id="spray-tool" src="images/tools_panel_spray_button.png" class="block, fill" />
-                        </li>
-                        <li class="tool-panel-button tool-button">
-                            <img id="paint-tool" src="images/tools_panel_paint_button.png" class="block, fill" />
-                        </li>
-                        <li class="tool-panel-button tool-button">
-                            <img id="colour-picker-tool" src="images/tools_panel_colour_picker_button.png" class="block, fill" />
-                        </li>
-                        <li class="tool-panel-button tool-button">
-                            <img id="eraser-tool" src="images/tools_panel_eraser_button.png" class="block, fill" />
-                        </li>
-                        <li class="tool-panel-button tool-button">
-                            <img id="delete-tool" src="images/tools_panel_delete_button.png" class="block, fill" />
-                        </li>
-                    </ul>
+                <div id="right-panel">
+                    <div id="stroke-colour-picker"></div>
+                    <div id="tools-panel" class="block">
+                        <ul>
+                            <li class="tool-panel-button tool-button selected">
+                                <img id="pencil-tool" src="images/tools_panel_pencil_button.png" class="block, fill" />
+                            </li>
+                            <li class="tool-panel-button tool-button">
+                                <img id="spray-tool" src="images/tools_panel_spray_button.png" class="block, fill" />
+                            </li>
+                            <li class="tool-panel-button tool-button">
+                                <img id="paint-tool" src="images/tools_panel_paint_button.png" class="block, fill" />
+                            </li>
+                            <li class="tool-panel-button tool-button">
+                                <img id="colour-picker-tool" src="images/tools_panel_colour_picker_button.png" class="block, fill" />
+                            </li>
+                            <li class="tool-panel-button tool-button">
+                                <img id="eraser-tool" src="images/tools_panel_eraser_button.png" class="block, fill" />
+                            </li>
+                            <li class="tool-panel-button tool-button">
+                                <img id="delete-tool" src="images/tools_panel_delete_button.png" class="block, fill" />
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 			
@@ -156,6 +155,5 @@
             </div>
         </div>
     </div>
-    <div id="footer">Original Author <a href="https://github.com/theburningmonk/">theburningmonk</a>, Modified By <a href="http://www.facebook.com/jimmyken793">jimmyken793</a></div>
 </body>
 </html>

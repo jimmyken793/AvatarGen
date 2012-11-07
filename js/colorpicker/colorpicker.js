@@ -391,7 +391,7 @@
 						$(this).data('colorpickerId', id);
 						var cal = $(tpl).attr('id', id);
 						if (options.flat) {
-							cal.appendTo(this).show();
+							cal.appendTo($(this)).show();
 						} else {
 							cal.appendTo(document.body);
 						}

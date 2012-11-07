@@ -30,9 +30,11 @@
  ************************/
 #tools-panel
 {
-    width: 500px;
-    height: 62px;
-    margin: 0px auto;
+    width: 356px;
+    height: 124px;
+    margin: 5px 5px;
+    padding: 10px 10px;
+    display: block;
     background: #dfe9f5; /* fallback */
 	background: -moz-linear-gradient(top, #dfe9f5, #dce7f5);
     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#dfe9f5), to(#dce7f5));
@@ -117,14 +119,6 @@
 	border-radius: 2px;
 }
 
-#stroke-colour-picker
-{
-    position: absolute;
-    overflow: hidden;
-    top: -176px;
-    z-index: 1000;
-    height: 0px;
-}
 
 /******************************** 
  *		STROKE WIDTH TOOL		*

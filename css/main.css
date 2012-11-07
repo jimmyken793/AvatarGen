@@ -11,7 +11,9 @@ body
 	background: #000;
 	margin: 10px 50px;
 }
-
+#footer{
+	text-align: right;
+}
 .block
 {
 	display: block;
@@ -38,7 +40,7 @@ aside
 #wrapper
 {
 	width: 800px;
-	height: 700px;
+	height: 690px;
 	margin: 0px auto;
 	padding: 20px 20px;
 	-moz-border-radius: 10px;

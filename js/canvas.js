@@ -29,6 +29,12 @@ function unbindMouseEvents() {
 function clearDrawing() {
     drawingCanvasCxt.fillStyle = backgroundColour;
     drawingCanvasCxt.fillRect(0, 0, drawingCanvas.width(), drawingCanvas.height());
+    var img = new Image();
+    img.src = 'images/chicken.jpg';
+    img.onload = function(){
+        drawingCanvasCxt.drawImage(img, 0,0);
+        img = null;
+    };
 }
 
 // work out the element left and top offset by recursively going through its
@@ -114,7 +120,12 @@ function initializeCanvas() {
     overlayCanvasCxt = overlayCanvas.get(0).getContext("2d");
 
     outputImage = document.getElementById("output-img");
-
+    var img = new Image();
+    img.src = 'images/chicken.jpg';
+    img.onload = function(){
+        drawingCanvasCxt.drawImage(img, 0,0);
+        img = null;
+    };
     strokeColour = $("#stroke-colour");
 
     setCanvasOffsets();

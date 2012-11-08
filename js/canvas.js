@@ -118,12 +118,9 @@ function setCanvasOffsets() {
 }
 
 function undoBackup(){
-    var backCanvas = document.createElement('canvas');
-    backCanvas.width = drawingCanvas.width;
-    backCanvas.height = drawingCanvas.height;
-    var backCtx = backCanvas.getContext('2d');
-    backCtx.drawImage(drawingCanvas.get(0), 0,0);
-    undoArr[undoIndex]=backCanvas;
+    var img = new Image();
+    img.src = drawingCanvas.get(0).toDataURL("image/png");
+    undoArr[undoIndex] = img;
     undoIndex++;
 }
 

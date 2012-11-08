@@ -118,15 +118,13 @@ function setCanvasOffsets() {
 }
 
 function undoBackup(){
-    var img = new Image();
-    img.src = drawingCanvas.get(0).toDataURL("image/png");
-    undoArr[undoIndex] = img;
+    undoArr[undoIndex] = drawingCanvasCxt.getImageData(0, 0, 500, 500);;
     undoIndex++;
 }
 
 function undo(){
     if(undoIndex > 0){
-        drawingCanvasCxt.drawImage(undoArr[undoIndex-1], 0,0);
+        drawingCanvasCxt.putImageData(undoArr[undoIndex-1], 0,0);
         undoArr[undoIndex-1]=null;
         undoIndex--;
     }

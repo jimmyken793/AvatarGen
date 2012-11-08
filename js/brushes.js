@@ -27,6 +27,7 @@ var PencilBrush = new Class({
         }
 
         this.startDrawing = function (position) {
+            undoBackup();
             // start drawing by moving to the specified x and y coordinates
             drawingCxt.beginPath();
             drawingCxt.moveTo(position.X--, position.Y--);
@@ -41,7 +42,6 @@ var PencilBrush = new Class({
             // draw the line to the finishing coordinates
             drawLine(position);
             drawingCxt.closePath();
-            undoBackup();
         };
     }
 });
@@ -83,6 +83,7 @@ var SprayBrush = new Class({
         };
 
         this.startDrawing = function (position) {
+            undoBackup();
             _center = position;
 
             // spray once every 200 milliseconds

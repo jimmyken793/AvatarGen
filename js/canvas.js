@@ -126,8 +126,7 @@ function undoBackup(){
 
 function undo(){
     if(undoIndex > 0){
-        var bak=undoArr[undoIndex-1];
-        drawingCanvasCxt.drawImage(bak, 0,0);
+        drawingCanvasCxt.drawImage(undoArr[undoIndex-1], 0,0);
         undoArr[undoIndex-1]=null;
         undoIndex--;
     }

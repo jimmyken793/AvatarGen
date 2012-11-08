@@ -5,7 +5,14 @@
 	color: white;
 	font-family: 'Schoolbell', serif;
 }
-
+#recruit-link{
+	text-align: right;
+	font-size:1.6em;
+	font-weight: bold;
+}
+.header-element{
+	margin-bottom: 5px;
+}
 body 	
 {	
 	background: #000;

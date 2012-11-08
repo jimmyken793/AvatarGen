@@ -66,8 +66,10 @@
                 $( "#brush_slider" ).slider( {
                     change: function(e, ui){
                     setBrushSize(ui.value);
-                    }
-                });
+                    },
+                    min: 1,
+                    max: 100,
+                }).slider({value:10});
 
                 // initialize the canvas
                 initializeCanvas();

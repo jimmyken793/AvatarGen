@@ -11,6 +11,8 @@ var canvasOffsetLeft,   // the left offset for the canvas elements
     backgroundColour,   // the background colour
     brushes,            // the available brushes
     undoArr,
+    undoLength,
+    undoMaxLength,
     undoIndex;
 // changes the stroke colour of the drawing canvas
 function setColour(colour) {
@@ -118,21 +120,27 @@ function setCanvasOffsets() {
 }
 
 function undoBackup(){
-    undoArr[undoIndex] = drawingCanvasCxt.getImageData(0, 0, 500, 500);;
+    undoArr[undoIndex%undoMaxLength] = drawingCanvasCxt.getImageData(0, 0, 500, 500);;
     undoIndex++;
+    if(undoLength<=undoMaxLength){
+        undoLength++;
+    }
 }
 
 function undo(){
-    if(undoIndex > 0){
-        drawingCanvasCxt.putImageData(undoArr[undoIndex-1], 0,0);
-        undoArr[undoIndex-1]=null;
+    if(undoLength > 0){
         undoIndex--;
+        undoLength--;
+        drawingCanvasCxt.putImageData(undoArr[(undoIndex)%undoMaxLength], 0,0);
+        undoArr[(undoIndex)%undoMaxLength]=null;
     }
 }
 
 function initializeCanvas() {
     undoArr=[];
     undoIndex=0;
+    undoLength=0;
+    undoMaxLength=30;
     // get references to the canvas element as well as the 2D drawing context
     drawingCanvas = $("#drawingCanvas");
     drawingCanvasCxt = drawingCanvas.get(0).getContext("2d");

@@ -15,6 +15,11 @@ var PencilBrush = new Class({
             drawingCxt.lineJoin = "round";
         };
 
+        this.setSize = function (size) {
+            this.lineWidth = size;
+            drawingCxt.lineWidth = this.lineWidth;
+        };
+
         // draws a line to the x and y coordinates of the specified position
         function drawLine(position) {
             drawingCxt.lineTo(position.X, position.Y);
@@ -53,6 +58,7 @@ var SprayBrush = new Class({
             _center;        // the current center to spray
 
         function getRandomOffset() {
+            console.log(radius);
             var randomAngle = Math.random() * 360;
             var randomRadius = Math.random() * radius;
 
@@ -69,6 +75,10 @@ var SprayBrush = new Class({
 
         this.setColour = function (colour) {
             drawingCxt.fillStyle = colour;
+        };
+        this.setSize = function (size) {
+            radius = size;
+            density = size*1.5;
         };
 
         this.startDrawing = function (position) {
@@ -166,6 +176,9 @@ var ColourPicker = new Class({
         }
 
         this.setColour = function (colour) {
+        };
+
+        this.setSize = function (size) {
         };
 
         this.startDrawing = function (position) {

@@ -21,6 +21,11 @@ function setColour(colour) {
     $("#stroke-colour-picker").ColorPickerSetColor(colour);
 }
 
+function setBrushSize(size){
+    for(brush in brushes){
+        brushes[brush].setSize(size);
+    }
+}
 function unbindMouseEvents() {
     overlayCanvas.unbind("mousemove").unbind("mouseup").unbind("mouseout");
 }

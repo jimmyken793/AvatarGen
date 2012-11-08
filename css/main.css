@@ -18,14 +18,19 @@ body
 	width:356px;
 }
 #right-panel, #left-panel{
-float:left;
-
+	float:left;
+	height:100%;
 }
 .block
 {
 	display: block;
 }
-
+#brush-panel{
+	padding:10px 30px;
+}
+#brush-slider{
+	margin:10px;
+}
 .fill
 {
     width: 100%;

@@ -22,8 +22,8 @@
 	<script type="text/javascript" src="js/jquery/jquery-ui-1.9.1.custom.min.js"></script>
     <script type="text/javascript" src="js/rxjs/rx.js"></script>
     <script type="text/javascript" src="js/rxjs/rx.jQuery.js"></script>
-	<script type="text/javascript" src="js/mootools/mootools-core-compressed-1.3.js"></script>
-	<script type="text/javascript" src="js/mootools/mootools-more-compressed-1.3.js"></script>
+	<script type="text/javascript" src="js/mootools/mootools-core-1.4.5-full-compat-yc.js"></script>
+	<script type="text/javascript" src="js/mootools/mootools-more-1.4.0.1.js"></script>
     <script type="text/javascript" src="js/modernizr/modernizr-1.6.min.js"></script>
     <script type="text/javascript" src="js/colorpicker/colorpicker.js"></script>
     <script type="text/javascript" src="js/layout.js"></script>
@@ -63,6 +63,11 @@
                     .Subscribe(function () {
                         $("#splash").fadeOut("slow");
                     });
+                $( "#brush_slider" ).slider( {
+                    change: function(e, ui){
+                    setBrushSize(ui.value);
+                    }
+                });
 
                 // initialize the canvas
                 initializeCanvas();
@@ -123,6 +128,10 @@
                 </div>
                 <div id="right-panel">
                     <div id="stroke-colour-picker"></div>
+                    <div id="brush-panel">
+                        <span>筆刷大小：</span>
+                    <div id="brush_slider"></div>
+                    </div>
                     <div id="tools-panel" class="block">
                         <ul>
                             <li class="tool-panel-button tool-button selected">
@@ -147,10 +156,9 @@
                     </div>
                 </div>
             </div>
-			
             <h2 id="step-2"><a href="#">Step 2 - Save</a></h2>
             <div>
-                <h2>Right click to save:</h2>
+                <h2>右鍵存檔^.&lt;</h2>
                 <img id="output-img" />
             </div>
         </div>

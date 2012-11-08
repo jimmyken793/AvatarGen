@@ -7,9 +7,6 @@ $(function () {
     };
 
     $("#accordion").accordion({
-        autoHeight: false,
-        fillSpace: true,
-        navigation: true,
         icons: icons,
         change: function (event, ui) {
             // save the canvas to the output img element if switching to
@@ -33,12 +30,6 @@ $(function () {
             var hexColour = "#" + hex;
             setColour(hexColour);
         }
-    });
-
-    $("#stroke-colour-tool").toggle(function () {
-        strokeColourPicker.stop().animate({ height: 173 }, 500);
-    }, function () {
-        strokeColourPicker.stop().animate({ height: 0 }, 500);
     });
 
     $("#delete-tool").click(function () {

@@ -30,7 +30,7 @@
  ************************/
 #tools-panel
 {
-    width: 356px;
+    width: 336px;
     height: 124px;
     margin: 5px 5px;
     padding: 10px 10px;
@@ -57,8 +57,7 @@
 {
 	float: left;
     height: 54px;
-    width: 54px;    
-    position: relative;
+    width: 54px;
     margin: 2px;
 }
 

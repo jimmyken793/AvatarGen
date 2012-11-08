@@ -9,8 +9,9 @@ var canvasOffsetLeft,   // the left offset for the canvas elements
     strokeColour,       // the span element showing the current stroke colour
     currentColour,      // what's the colour to use with the current brush
     backgroundColour,   // the background colour
-    brushes;            // the available brushes
-
+    brushes,            // the available brushes
+    undoArr,
+    undoIndex;
 // changes the stroke colour of the drawing canvas
 function setColour(colour) {
     currentColour = colour;
@@ -116,7 +117,28 @@ function setCanvasOffsets() {
     canvasOffsetTop = canvasOffset.OffsetTop;
 }
 
+function undoBackup(){
+    var backCanvas = document.createElement('canvas');
+    backCanvas.width = drawingCanvas.width;
+    backCanvas.height = drawingCanvas.height;
+    var backCtx = backCanvas.getContext('2d');
+    backCtx.drawImage(drawingCanvas.get(0), 0,0);
+    undoArr[undoIndex]=backCanvas;
+    undoIndex++;
+}
+
+function undo(){
+    if(undoIndex > 0){
+        var bak=undoArr[undoIndex-1];
+        drawingCanvasCxt.drawImage(bak, 0,0);
+        undoArr[undoIndex-1]=null;
+        undoIndex--;
+    }
+}
+
 function initializeCanvas() {
+    undoArr=[];
+    undoIndex=0;
     // get references to the canvas element as well as the 2D drawing context
     drawingCanvas = $("#drawingCanvas");
     drawingCanvasCxt = drawingCanvas.get(0).getContext("2d");

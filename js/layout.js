@@ -54,6 +54,10 @@ $(function () {
         $(this).parent().addClass("selected");
     });
 
+    $("#undo-tool").click(function () {
+        undo();
+    });
+
     $("#eraser-tool").click(function () {
         setBrush("eraser");
         $(".tool-button").removeClass("selected");

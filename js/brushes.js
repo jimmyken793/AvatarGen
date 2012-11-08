@@ -41,6 +41,7 @@ var PencilBrush = new Class({
             // draw the line to the finishing coordinates
             drawLine(position);
             drawingCxt.closePath();
+            undoBackup();
         };
     }
 });
@@ -95,6 +96,7 @@ var SprayBrush = new Class({
 
         this.finishDrawing = function (position) {
             clearInterval(_intervalId);
+            undoBackup();
         };
 
         this.spray = function () {

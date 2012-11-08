@@ -97,7 +97,6 @@ var SprayBrush = new Class({
 
         this.finishDrawing = function (position) {
             clearInterval(_intervalId);
-            undoBackup();
         };
 
         this.spray = function () {
